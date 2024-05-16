@@ -43,6 +43,13 @@ img{
     width: 100%;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 30px 30px 30px;
+}
+
 #Details{
     display: flex;
     flex-direction: column;
@@ -60,20 +67,10 @@ img{
         flex-direction: column;
         gap: 10px;
         padding: 12px 30px;
-        list-style-type: none;
     }
 
     li{
-        position: relative;
         line-height: 1.5rem;
-    }
-    
-    li::after{
-        position: absolute;
-        content: ".";
-        left: -12%;
-        top: -50%;
-        transform: scale(2.5);
     }
 
     li:nth-child(1)::after{
@@ -81,9 +78,74 @@ img{
     }
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 0 30px 30px 30px;
+#Ingredients{
+    
+    ul{
+        margin-left: 2.6rem;
+        margin-top: 0.8rem;
+    }
+
+    li{
+        line-height: 2rem;
+        font-weight: 500;
+    }
+
+    li:last-child{
+        line-height: 1.5rem;
+    }
+
+    li::after{
+        top: -35%;
+    }
+
+    li:last-child::after{
+        top: 0;
+    }
 }
+
+#Details, #Ingredients{
+
+    li{
+        position: relative;
+    }
+
+    li::after{
+        position: absolute;
+        content: ".";
+        top: -50%;
+        transform: scale(2.5);
+        left: -12%;
+    }
+}
+
+#Instructions{
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2.6rem;
+        margin-top: 1rem;
+        gap: 10px;
+        counter-reset: index;
+    }
+
+    li{
+        position: relative;
+        line-height: 1.5rem;
+    }
+
+    li::before{
+        position: absolute;
+        content: counter(index) ".";
+        counter-increment: index;
+        top: 0;
+        left: -12%;
+        color: var(--Nutmeg);
+        font-weight: 800;
+    }
+
+    
+
+}
+
+
