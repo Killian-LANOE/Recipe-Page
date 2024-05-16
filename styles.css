@@ -44,9 +44,6 @@ img{
 }
 
 main{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
     padding: 0 30px 30px 30px;
 }
 
@@ -103,21 +100,6 @@ main{
     }
 }
 
-#Details, #Ingredients{
-
-    li{
-        position: relative;
-    }
-
-    li::after{
-        position: absolute;
-        content: ".";
-        top: -50%;
-        transform: scale(2.5);
-        left: -12%;
-    }
-}
-
 #Instructions{
 
     ul{
@@ -143,9 +125,78 @@ main{
         color: var(--Nutmeg);
         font-weight: 800;
     }
-
-    
-
 }
 
+#Nutrition{
+    p{
+        margin-top: 1rem;
+        line-height: 1.5rem;
+        font-size: 17px;
+    }
+    table{
+        width: calc(100% - 2.6rem);
+        height: auto;
+    }
 
+    tr{
+        display: flex;
+        position: relative;
+        padding: 1.2rem 0 1.2rem 2.6rem;
+        width: 100%;
+        font-weight: 500;
+    }
+
+    tr:first-child{
+        margin-top: 0.4rem;
+    }
+
+    td:nth-child(2){
+        font-weight: 700;
+        color: var(--Nutmeg);
+    }
+
+    tr:not(:last-child):after{
+        position: absolute;
+        content:" ";
+        bottom: 0;
+        left: 0;
+        background-color: var(--Light_Grey);
+        height: 2px;
+        width: 100%;
+    }
+
+    td{
+        height: auto;
+        width: 100%;
+    }
+}
+
+#Details, #Ingredients{
+
+    li{
+        position: relative;
+    }
+
+    li::after{
+        position: absolute;
+        content: ".";
+        top: -50%;
+        transform: scale(2.5);
+        left: -12%;
+    }
+}
+
+#Instructions, #Ingredients{
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+#Instructions::after, #Ingredients::after{
+    position: absolute;
+    content: ' ';
+    bottom: -2.2rem;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--Light_Grey);
+}
