@@ -35,7 +35,7 @@ h2{
 
 h3{
     color: var(--Dark_Raspberry);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 img{
@@ -45,6 +45,11 @@ img{
 
 main{
     padding: 0 30px 30px 30px;
+}
+
+header{
+    height: auto;
+    width: 100%;
 }
 
 #Details{
@@ -70,6 +75,10 @@ main{
         line-height: 1.5rem;
     }
 
+    li:nth-child(2){
+       text-wrap: nowrap;
+    }
+
     li:nth-child(1)::after{
         top: 0;
     }
@@ -85,10 +94,6 @@ main{
     li{
         line-height: 2rem;
         font-weight: 500;
-    }
-
-    li:last-child{
-        line-height: 1.5rem;
     }
 
     li::after{
@@ -121,7 +126,7 @@ main{
         content: counter(index) ".";
         counter-increment: index;
         top: 0;
-        left: -12%;
+        left: -2rem;
         color: var(--Nutmeg);
         font-weight: 800;
     }
@@ -182,7 +187,13 @@ main{
         content: ".";
         top: -50%;
         transform: scale(2.5);
-        left: -12%;
+        left: -2rem;
+    }
+}
+
+#Ingredients{
+    li::after{
+        top: -30%;
     }
 }
 
@@ -199,4 +210,44 @@ main{
     height: 2px;
     width: 100%;
     background-color: var(--Light_Grey);
+}
+
+
+
+/* Media Queries */
+
+@media screen and (min-width:389px) {
+
+    #Details{
+        li:nth-child(1)::after{
+            top: -50%;
+        }
+    }  
+}
+
+/* @media screen and (min-width:425px) {} */
+
+@media screen and (min-width: 581px) {
+
+    #Ingredients{
+        li:last-child::after{
+            top: -35%;
+    }}
+}
+
+@media screen and (min-width:768px)  {
+
+    header{
+        width: auto;
+        padding:30px 30px 0 30px ;
+    }
+
+    img{
+        object-fit: contain;
+        border-radius: 25px;
+    }
+    
+    #Details{
+       padding: 30px 0;
+}
 }
