@@ -225,9 +225,7 @@ header{
     }  
 }
 
-/* @media screen and (min-width:425px) {} */
-
-@media screen and (min-width: 581px) {
+@media screen and (min-width: 551px) {
 
     #Ingredients{
         li:last-child::after{
@@ -237,17 +235,41 @@ header{
 
 @media screen and (min-width:768px)  {
 
+    header,main{
+        max-width: 768px;
+        background-color: white;
+    }
+
     header{
         width: auto;
         padding:30px 30px 0 30px ;
+        border-top-left-radius: 25px ;
+        border-top-right-radius: 25px ;
     }
 
     img{
         object-fit: contain;
         border-radius: 25px;
     }
+
+    main{
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
     
     #Details{
        padding: 30px 0;
+    }
 }
+
+@media screen and (min-width: 769px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--Eggshell);
+        padding: 2% 0;
+    }
+    
 }
